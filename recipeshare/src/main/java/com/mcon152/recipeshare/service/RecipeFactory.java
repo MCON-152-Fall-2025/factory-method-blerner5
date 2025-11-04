@@ -13,6 +13,9 @@ public class RecipeFactory {
             case "VEGETARIAN":
                 out = new VegetarianRecipe();
                 break;
+            case "SOUP":
+                out = new Soup();
+                break;
             case "DESSERT":
                 out = new DessertRecipe();
                 break;

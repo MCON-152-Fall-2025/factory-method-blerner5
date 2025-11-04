@@ -65,5 +65,17 @@ class RecipeFactoryTest {
         Recipe r = RecipeFactory.createFromRequest(req);
         assertTrue(r instanceof BasicRecipe);
     }
+
+    @Test
+    @DisplayName("POST /recipes with SoupRecipe returns 201 and Location header")
+    void postSoupRecipe_returns201AndLocation() throws Exception {
+        SoupRecipe soup = new SoupRecipe(null, "Spicy Lentil Soup", "Hearty and hot", "lentils, spices", "boil and simmer", 4, "High");
+
+        mockMvc.perform(post("/recipes")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(soup)))
+                .andExpect(status().isCreated())
+                .andExpect(header().exists("Location"));
+    }
 }
 
