@@ -67,7 +67,7 @@ class RecipeFactoryTest {
     }
 
     @Test
-    @DisplayName("POST /recipes with SoupRecipe returns 201 and Location header")
+    @DisplayName("POST /recipes with SoupRecipe.java returns 201 and Location header")
     void postSoupRecipe_returns201AndLocation() throws Exception {
         SoupRecipe soup = new SoupRecipe(null, "Spicy Lentil Soup", "Hearty and hot", "lentils, spices", "boil and simmer", 4, "High");
 
